@@ -58,7 +58,7 @@ int main(int argc, char *argv[]) {
 			// r_global is used for the check, but it may not have been updated yet when the
 			// condition check occurs.
 			MPI_Allreduce(&r_local, &r_global, 1, MPI_INT, MPI_SUM, MPI_COMM_WORLD);
-			printf("element %d (r_local=%d, r_global=%d, process=%d)\n", cntr, r_local, r_global, world_rank);
+			// printf("element %d (r_local=%d, r_global=%d, process=%d)\n", cntr, r_local, r_global, world_rank);
 		}
 		
 		if (test(*A)) r_local++;
@@ -72,6 +72,6 @@ int main(int argc, char *argv[]) {
 	// Stop timer
 	finish=MPI_Wtime();
 	MPI_Finalize();
-	printf("Parallel Elapsed time: %f seconds\n", finish-start); 
+	printf("Finished in %f seconds (r=%d)\n", finish-start, r_global);
 	return 0;
 }
