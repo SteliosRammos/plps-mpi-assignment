@@ -62,6 +62,7 @@ int main(int argc, char *argv[]) {
 		}
 		
 		if (test(*A)) r_local++;
+		r_global++;
 		A++;
 		cntr++;
 		

@@ -61,9 +61,9 @@ int main(int argc, char *argv[]) {
 		}
 		
 		if (test(*A)) r_local++;
-		A++;
+		r_global++;
 		cntr++;
-		
+		A++;
 	} while (cntr < bucketSize && r_global < R); // note: r_global is used so that all terminate simultaneously
 	
 	// Stop timer

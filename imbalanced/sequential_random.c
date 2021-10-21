@@ -7,12 +7,11 @@ int R;
 int r = 0;
 
 int main(int argc, char *argv[]) {
-	
-	clock_t begin = clock();
-	
+		
 	int *A = allocate_mem(N);
 	fill_random(A, N);
 	int cntr = 0;
+	clock_t begin = clock();
 	
 	do {
 		if(cntr % 100 == 0) {
@@ -26,5 +25,5 @@ int main(int argc, char *argv[]) {
 	
 	clock_t end = clock();
 	double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
-	printf("Sequential Elapsed time: %f seconds\n", time_spent);
+	printf("Finished in %f seconds (r=%d)\n", time_spent, r);
 }
